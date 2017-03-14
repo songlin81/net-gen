@@ -8,6 +8,8 @@ dotNet Quick Reference
     * new virtual
     * new override
     * delegations
+    * Cast int to enum
+    * conversion operator
 * pattern
     * dip
     * unity(IOC)
