@@ -20,6 +20,7 @@ dotNet Quick Reference
     * Debug & Assert
     * Post async result to the main UI thread
     * Form context
+    * Generic interface
 * pattern
     * dip
     * unity(IOC)
@@ -29,6 +30,9 @@ dotNet Quick Reference
     * 7 ways to task
     * APM, EAP->TPL
     * Task Explained
+* MVC
+    * ExpandObject in MVC for passing multiple objects to view
+
     
 ##有问题反馈
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
