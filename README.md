@@ -15,6 +15,7 @@ dotNet Quick Reference
     * Getting the full name of an assembly
     * databind symbol
     * Delegate,Action,Func,Predicate
+    * singleordefault
 * pattern
     * dip
     * unity(IOC)
