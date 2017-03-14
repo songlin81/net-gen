@@ -14,6 +14,7 @@ dotNet Quick Reference
     * IComparable,IComparer
     * Getting the full name of an assembly
     * databind symbol
+    * Delegate,Action,Func,Predicate
 * pattern
     * dip
     * unity(IOC)
