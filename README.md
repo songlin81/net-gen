@@ -11,6 +11,7 @@ dotNet Quick Reference
     * Cast int to enum
     * conversion operator
     * IFormattable,IFormatProvider,ICustomFormatter
+    
 * pattern
     * dip
     * unity(IOC)
