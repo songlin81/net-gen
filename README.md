@@ -1,13 +1,9 @@
-## 101 for ( MS TSQL )
-TSQL Quick Reference
+## 101 for ( MS dotNet )
+dotNet Quick Reference
 
-##TSQL syntax
+##dotNet
 
-* `group by` to eliminate duplicates but show other columns
-* case
-* millions of deletions
-* CTE recursion
-* Row number and top
+* function parameter by value
 
 ##有问题反馈
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
