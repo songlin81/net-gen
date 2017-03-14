@@ -5,6 +5,9 @@ dotNet Quick Reference
 
 * basic
     * function parameter by value
+    * new virtual
+    * new override
+    * delegations
 * pattern
     * dip
     * unity(IOC)
