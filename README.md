@@ -18,12 +18,17 @@ dotNet Quick Reference
     * singleordefault
     * const v.s. static readonly
     * Debug & Assert
+    * Post async result to the main UI thread
+    * Form context
 * pattern
     * dip
     * unity(IOC)
         * Unity resolve by code
         * Unity resolve by config
-
+* parallel
+    * 7 ways to task
+    * APM, EAP->TPL
+    * Task Explained
     
 ##有问题反馈
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
