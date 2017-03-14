@@ -12,6 +12,7 @@ dotNet Quick Reference
     * conversion operator
     * IFormattable,IFormatProvider,ICustomFormatter
     * IComparable,IComparer
+    * Getting the full name of an assembly
 * pattern
     * dip
     * unity(IOC)
