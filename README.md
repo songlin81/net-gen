@@ -13,6 +13,7 @@ dotNet Quick Reference
     * IFormattable,IFormatProvider,ICustomFormatter
     * IComparable,IComparer
     * Getting the full name of an assembly
+    * databind symbol
 * pattern
     * dip
     * unity(IOC)
