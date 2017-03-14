@@ -17,6 +17,7 @@ dotNet Quick Reference
     * Delegate,Action,Func,Predicate
     * singleordefault
     * const v.s. static readonly
+    * Debug & Assert
 * pattern
     * dip
     * unity(IOC)
