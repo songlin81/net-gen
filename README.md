@@ -16,6 +16,7 @@ dotNet Quick Reference
     * databind symbol
     * Delegate,Action,Func,Predicate
     * singleordefault
+    * const v.s. static readonly
 * pattern
     * dip
     * unity(IOC)
