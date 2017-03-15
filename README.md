@@ -1,7 +1,7 @@
 ## 101 for ( MS dotNet )
 dotNet Quick Reference
 
-##dotNet
+## dotNet
 
 * basic
     * function parameter by value
@@ -38,6 +38,9 @@ dotNet Quick Reference
     * APM, EAP->TPL
     * Task Explained
     * PLinq demo
+        * let
+        * skipwhile
+        * 
 * MVC
     * ExpandObject in MVC for passing multiple objects to view
 
