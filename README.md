@@ -37,10 +37,7 @@ dotNet Quick Reference
     * 7 ways to task
     * APM, EAP->TPL
     * Task Explained
-    * PLinq demo
-        * let
-        * skipwhile
-        * 
+    * PLinq demo (let, skipwhile, takewhile, lazy)
 * MVC
     * ExpandObject in MVC for passing multiple objects to view
 

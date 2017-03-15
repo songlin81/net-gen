@@ -16,7 +16,7 @@ namespace PLinqDemo
 
 			string[] customers = GetCustomersAsStrings().ToArray();
 
-			// First, we must simulate some currupt input.
+			// To simulate some currupt input, and capture exception via AggregateException
 			//customers[54] = "###";
 
 			var parallelQuery = from cust in customers.AsParallel()
@@ -75,54 +75,51 @@ namespace PLinqDemo
 				.SkipWhile((line) => line.StartsWith("PRODUCTS") == false)
 				.Skip(1)
 				.TakeWhile((line) => line.StartsWith("END PRODUCTS") == false);
-			return from line in products
-				let fields = line.Split(',')
+			return 	from line in products
+					let fields = line.Split(',')
 					select new Product()
-			{
-				ProductID = Convert.ToInt32(fields[0]),
-				ProductName = fields[1].Trim(),
-				UnitPrice = Convert.ToDouble(fields[2])
+					{
+						ProductID = Convert.ToInt32(fields[0]),
+						ProductName = fields[1].Trim(),
+						UnitPrice = Convert.ToDouble(fields[2])
 
-			};
+					};
 		}
 
-		//  "10248, VINET, 7/4/1996 12:00:00 AM, 7/16/1996 12:00:00 AM
 		public static IEnumerable<Order> GetOrders()
 		{
-			// Assumes we copied the file correctly!
 			var orders = System.IO.File.ReadAllLines(@"plinqdata.csv")
 				.SkipWhile((line) => line.StartsWith("ORDERS") == false)
 				.Skip(1)
 				.TakeWhile((line) => line.StartsWith("END ORDERS") == false);
-			return from line in orders
-				let fields = line.Split(',')
-				select new Order()
-				{
-					OrderID = Convert.ToInt32(fields[0]),
-					CustomerID = fields[1].Trim(),
-					OrderDate = DateTime.Parse(fields[2]),
-					ShippedDate = DateTime.Parse(fields[3])
-				};
+			return 	from line in orders
+					let fields = line.Split(',')
+					select new Order()
+					{
+						OrderID = Convert.ToInt32(fields[0]),
+						CustomerID = fields[1].Trim(),
+						OrderDate = DateTime.Parse(fields[2]),
+						ShippedDate = DateTime.Parse(fields[3])
+					};
 		}
 
 		public static IEnumerable<OrderDetail> GetOrderDetails()
 		{
-			// Assumes we copied the file correctly!
 			var orderDetails = System.IO.File.ReadAllLines(@"plinqdata.csv")
 				.SkipWhile((line) => line.StartsWith("ORDER DETAILS") == false)
 				.Skip(1)
 				.TakeWhile((line) => line.StartsWith("END ORDER DETAILS") == false);
 
-			return from line in orderDetails
-				let fields = line.Split(',')
+			return 	from line in orderDetails
+					let fields = line.Split(',')
 					select new OrderDetail()
-			{
-				OrderID = Convert.ToInt32(fields[0]),
-				ProductID = Convert.ToInt32(fields[1]),
-				UnitPrice = Convert.ToDouble(fields[2]),
-				Quantity = Convert.ToDouble(fields[3]),
-				Discount = Convert.ToDouble(fields[4])
-			};
+					{
+						OrderID = Convert.ToInt32(fields[0]),
+						ProductID = Convert.ToInt32(fields[1]),
+						UnitPrice = Convert.ToDouble(fields[2]),
+						Quantity = Convert.ToDouble(fields[3]),
+						Discount = Convert.ToDouble(fields[4])
+					};
 		}
 
 		#region DataClasses
@@ -188,44 +185,42 @@ namespace PLinqDemo
 
 		public static Order[] GetOrdersForCustomer(string id)
 		{
-			// Assumes we copied the file correctly!
 			var orders = System.IO.File.ReadAllLines(@"plinqdata.csv")
 				.SkipWhile((line) => line.StartsWith("ORDERS") == false)
 				.Skip(1)
 				.TakeWhile((line) => line.StartsWith("END ORDERS") == false);
-			var orderStrings = from line in orders
-				let fields = line.Split(',')
-					where fields[1].CompareTo(id) == 0
-				select new Order()
-			{
-				OrderID = Convert.ToInt32(fields[0]),
-				CustomerID = fields[1].Trim(),
-				OrderDate = DateTime.Parse(fields[2]),
-				ShippedDate = DateTime.Parse(fields[3])
-			};
+			var orderStrings = 	from line in orders
+								let fields = line.Split(',')
+								where fields[1].CompareTo(id) == 0
+								select new Order()
+								{
+									OrderID = Convert.ToInt32(fields[0]),
+									CustomerID = fields[1].Trim(),
+									OrderDate = DateTime.Parse(fields[2]),
+									ShippedDate = DateTime.Parse(fields[3])
+								};
 			return orderStrings.ToArray();
 		}
 
 		public static OrderDetail[] GetOrderDetailsForOrder(int id)
 		{
-			// Assumes we copied the file correctly!
 			var orderDetails = System.IO.File.ReadAllLines(@"plinqdata.csv")
 				.SkipWhile((line) => line.StartsWith("ORDER DETAILS") == false)
 				.Skip(1)
 				.TakeWhile((line) => line.StartsWith("END ORDER DETAILS") == false);
 
-			var orderDetailStrings = from line in orderDetails
-				let fields = line.Split(',')
-				let ordID = Convert.ToInt32(fields[0])
-					where ordID == id
-				select new OrderDetail()
-			{
-				OrderID = ordID,
-				ProductID = Convert.ToInt32(fields[1]),
-				UnitPrice = Convert.ToDouble(fields[2]),
-				Quantity = Convert.ToDouble(fields[3]),
-				Discount = Convert.ToDouble(fields[4])
-			};
+			var orderDetailStrings = 	from line in orderDetails
+										let fields = line.Split(',')
+										let ordID = Convert.ToInt32(fields[0])
+										where ordID == id
+										select new OrderDetail()
+										{
+											OrderID = ordID,
+											ProductID = Convert.ToInt32(fields[1]),
+											UnitPrice = Convert.ToDouble(fields[2]),
+											Quantity = Convert.ToDouble(fields[3]),
+											Discount = Convert.ToDouble(fields[4])
+										};
 
 			return orderDetailStrings.ToArray();
 		}
