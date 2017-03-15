@@ -30,6 +30,7 @@ dotNet Quick Reference
     * Dynamic
     * document mode
     * StackTrace
+    * Html Encode
 * pattern
     * dip
     * unity(IOC)
