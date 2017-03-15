@@ -28,6 +28,7 @@ dotNet Quick Reference
     * origin of Lambda
     * Linq Syntax leftjoin groupby distinct
     * Dynamic
+    * document mode
 * pattern
     * dip
     * unity(IOC)
@@ -48,7 +49,7 @@ dotNet Quick Reference
         * PLinq AsParallel,Orderby,WithDegreeOfParallelism,ParallelEnumerable
         * ReaderWriterLockSlim
         * Transfer Deposit to demo interface event
-    * ConcurrentDictionary v.s. Hashtable Synchronized
+    * ConcurrentDictionary v.s. Hashtable.Synchronized
 * MVC
     * ExpandObject in MVC for passing multiple objects to view
 
