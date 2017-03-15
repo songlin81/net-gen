@@ -29,6 +29,7 @@ dotNet Quick Reference
     * Linq Syntax leftjoin groupby distinct
     * Dynamic
     * document mode
+    * StackTrace
 * pattern
     * dip
     * unity(IOC)
