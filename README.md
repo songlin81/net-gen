@@ -37,9 +37,15 @@ dotNet Quick Reference
     * 7 ways to task
     * APM, EAP->TPL
     * Task Explained
-    * PLinq demo (let, skipwhile, takewhile, lazy)
+    * PLinq demo (let,skipwhile,takewhile,lazy)
     * Parallel.ForEach
     * Parallel.Invoke
+    * Fishery demo for parallel
+        * Barrier
+        * Parallel.Invoke,Parallel.For,Parallel.ForEach,Break,AggregateException
+        * Mutex
+        * PLinq Map Reduce
+        * 
 * MVC
     * ExpandObject in MVC for passing multiple objects to view
 
