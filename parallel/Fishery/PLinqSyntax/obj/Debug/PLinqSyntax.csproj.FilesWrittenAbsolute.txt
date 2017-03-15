@@ -1,0 +1,7 @@
+/Users/wwh/Documents/Chubby/Chubby/0000_DotNet/TPL/Barrier_Parallel_Mutex_PLinq_ReaderWriterLockSlim_EventInterface/Fishery/PLinqSyntax/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/wwh/Documents/Chubby/Chubby/0000_DotNet/TPL/Barrier_Parallel_Mutex_PLinq_ReaderWriterLockSlim_EventInterface/Fishery/PLinqSyntax/bin/Debug/PLinqSyntax.exe.mdb
+/Users/wwh/Documents/Chubby/Chubby/0000_DotNet/TPL/Barrier_Parallel_Mutex_PLinq_ReaderWriterLockSlim_EventInterface/Fishery/PLinqSyntax/bin/Debug/PLinqSyntax.pdb
+/Users/wwh/Documents/Chubby/Chubby/0000_DotNet/TPL/Barrier_Parallel_Mutex_PLinq_ReaderWriterLockSlim_EventInterface/Fishery/PLinqSyntax/bin/Debug/PLinqSyntax.exe
+/Users/wwh/Documents/Chubby/Chubby/0000_DotNet/TPL/Barrier_Parallel_Mutex_PLinq_ReaderWriterLockSlim_EventInterface/Fishery/PLinqSyntax/obj/Debug/PLinqSyntax.exe
+/Users/wwh/Documents/Chubby/Chubby/0000_DotNet/TPL/Barrier_Parallel_Mutex_PLinq_ReaderWriterLockSlim_EventInterface/Fishery/PLinqSyntax/obj/Debug/PLinqSyntax.exe.mdb
+/Users/wwh/Documents/Chubby/Chubby/0000_DotNet/TPL/Barrier_Parallel_Mutex_PLinq_ReaderWriterLockSlim_EventInterface/Fishery/PLinqSyntax/obj/Debug/PLinqSyntax.pdb

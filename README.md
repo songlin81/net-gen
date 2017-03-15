@@ -45,7 +45,9 @@ dotNet Quick Reference
         * Parallel.Invoke,Parallel.For,Parallel.ForEach,Break,AggregateException
         * Mutex
         * PLinq Map Reduce
-        * 
+        * PLinq AsParallel,Orderby,WithDegreeOfParallelism,ParallelEnumerable
+        * ReaderWriterLockSlim
+        * Transfer Deposit to demo interface event
 * MVC
     * ExpandObject in MVC for passing multiple objects to view
 
