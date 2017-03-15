@@ -26,6 +26,8 @@ dotNet Quick Reference
     * yield return v.s. yield break
     * Extension method
     * origin of Lambda
+    * Linq Syntax leftjoin groupby distinct
+    * Dynamic
 * pattern
     * dip
     * unity(IOC)
