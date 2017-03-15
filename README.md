@@ -38,6 +38,7 @@ dotNet Quick Reference
     * APM, EAP->TPL
     * Task Explained
     * PLinq demo (let, skipwhile, takewhile, lazy)
+    * Parallel.ForEach
 * MVC
     * ExpandObject in MVC for passing multiple objects to view
 
