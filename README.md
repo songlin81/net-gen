@@ -25,6 +25,7 @@ dotNet Quick Reference
     * Func explained
     * yield return v.s. yield break
     * Extension method
+    * origin of Lambda
 * pattern
     * dip
     * unity(IOC)
