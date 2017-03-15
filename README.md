@@ -48,6 +48,7 @@ dotNet Quick Reference
         * PLinq AsParallel,Orderby,WithDegreeOfParallelism,ParallelEnumerable
         * ReaderWriterLockSlim
         * Transfer Deposit to demo interface event
+    * ConcurrentDictionary v.s. Hashtable Synchronized
 * MVC
     * ExpandObject in MVC for passing multiple objects to view
 

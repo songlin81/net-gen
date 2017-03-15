@@ -1,1 +1,12 @@
-﻿<Properties StartupItem="TransferDepositAccount/TransferDepositAccount.csproj" />
+﻿<Properties StartupItem="TransferDepositAccount/TransferDepositAccount.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TransferDepositAccount/Program.cs">
+    <Files>
+      <File FileName="TransferDepositAccount/Program.cs" Line="48" Column="77" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
