@@ -21,6 +21,8 @@ dotNet Quick Reference
     * Post async result to the main UI thread
     * Form context
     * Generic interface
+    * capture exception from main thread
+    * Func explained
 * pattern
     * dip
     * unity(IOC)
