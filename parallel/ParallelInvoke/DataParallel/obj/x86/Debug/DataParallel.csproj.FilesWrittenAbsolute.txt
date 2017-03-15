@@ -1,0 +1,10 @@
+/Users/wwh/Documents/Chubby/Chubby/0000_DotNet/TPL/ParallelInvoke/DataParallel/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/wwh/Documents/Chubby/Chubby/0000_DotNet/TPL/ParallelInvoke/DataParallel/bin/Debug/DataParallel.exe.mdb
+/Users/wwh/Documents/Chubby/Chubby/0000_DotNet/TPL/ParallelInvoke/DataParallel/bin/Debug/DataParallel.exe
+/Users/wwh/Documents/Chubby/Chubby/0000_DotNet/TPL/ParallelInvoke/DataParallel/obj/x86/Debug/DataParallel.exe
+/Users/wwh/Documents/Chubby/Chubby/0000_DotNet/TPL/ParallelInvoke/DataParallel/obj/x86/Debug/DataParallel.exe.mdb
+/Users/wwh/NET-gen/net-gen/parallel/ParallelInvoke/DataParallel/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/wwh/NET-gen/net-gen/parallel/ParallelInvoke/DataParallel/bin/Debug/DataParallel.exe.mdb
+/Users/wwh/NET-gen/net-gen/parallel/ParallelInvoke/DataParallel/bin/Debug/DataParallel.exe
+/Users/wwh/NET-gen/net-gen/parallel/ParallelInvoke/DataParallel/obj/x86/Debug/DataParallel.exe
+/Users/wwh/NET-gen/net-gen/parallel/ParallelInvoke/DataParallel/obj/x86/Debug/DataParallel.exe.mdb

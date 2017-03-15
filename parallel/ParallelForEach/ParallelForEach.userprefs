@@ -1,6 +1,10 @@
 ﻿<Properties StartupItem="ParallelForEach/ParallelForEach.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ParallelForEach/Program.cs">
+    <Files>
+      <File FileName="ParallelForEach/Program.cs" Line="35" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

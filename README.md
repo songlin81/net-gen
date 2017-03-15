@@ -39,6 +39,7 @@ dotNet Quick Reference
     * Task Explained
     * PLinq demo (let, skipwhile, takewhile, lazy)
     * Parallel.ForEach
+    * Parallel.Invoke
 * MVC
     * ExpandObject in MVC for passing multiple objects to view
 
