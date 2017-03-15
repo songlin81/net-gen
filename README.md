@@ -23,6 +23,8 @@ dotNet Quick Reference
     * Generic interface
     * capture exception from main thread
     * Func explained
+    * yield return v.s. yield break
+    * Extension method
 * pattern
     * dip
     * unity(IOC)
