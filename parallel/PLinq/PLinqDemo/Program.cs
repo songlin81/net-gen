@@ -9,13 +9,11 @@ namespace PLinqDemo
 	{
 		public static void Main()
 		{
-			//1. Call methods here.
 			TestDataSource();
 
 			Console.WriteLine("Press any key to exit.");
 			Console.ReadKey();
 
-			// Using the raw string array here. See PLINQ Data Sample.
 			string[] customers = GetCustomersAsStrings().ToArray();
 
 			// First, we must simulate some currupt input.
@@ -42,8 +40,7 @@ namespace PLinqDemo
 				}
 			}
 		}
-
-		//1
+			
 		static void TestDataSource()
 		{
 			Console.WriteLine("Customer count: {0}", GetCustomers().Count());
@@ -51,69 +48,7 @@ namespace PLinqDemo
 			Console.WriteLine("Order count: {0}", GetOrders().Count());
 			Console.WriteLine("Order Details count: {0}", GetOrderDetails().Count());
 		}
-
-		#region DataClasses
-		public class Order
-		{
-			private Lazy<OrderDetail[]> _orderDetails;
-			public Order()
-			{
-				_orderDetails = new Lazy<OrderDetail[]>(() => GetOrderDetailsForOrder(OrderID));
-			}
-			public int OrderID { get; set; }
-			public string CustomerID { get; set; }
-			public DateTime OrderDate { get; set; }
-			public DateTime ShippedDate { get; set; }
-			public OrderDetail[] OrderDetails { get { return _orderDetails.Value; } }
-		}
-
-		public class Customer
-		{
-			private Lazy<Order[]> _orders;
-			public Customer()
-			{
-				_orders = new Lazy<Order[]>(() => GetOrdersForCustomer(CustomerID));
-			}
-			public string CustomerID { get; set; }
-			public string CustomerName { get; set; }
-			public string Address { get; set; }
-			public string City { get; set; }
-			public string PostalCode { get; set; }
-			public Order[] Orders
-			{
-				get
-				{
-					return _orders.Value;
-				}
-			}
-		}
-
-		public class Product
-		{
-			public string ProductName { get; set; }
-			public int ProductID { get; set; }
-			public double UnitPrice { get; set; }
-		}
-
-		public class OrderDetail
-		{
-			public int OrderID { get; set; }
-			public int ProductID { get; set; }
-			public double UnitPrice { get; set; }
-			public double Quantity { get; set; }
-			public double Discount { get; set; }
-		}
-		#endregion
-
-		public static IEnumerable<string> GetCustomersAsStrings()
-		{
-			return System.IO.File.ReadAllLines(@"plinqdata.csv")
-				.SkipWhile((line) => line.StartsWith("CUSTOMERS") == false)
-				.Skip(1)
-				.TakeWhile((line) => line.StartsWith("END CUSTOMERS") == false);
-		}
-
-		//1
+			
 		public static IEnumerable<Customer> GetCustomers()
 		{
 			var customers = System.IO.File.ReadAllLines(@"plinqdata.csv")
@@ -121,56 +56,16 @@ namespace PLinqDemo
 				.Skip(1)
 				.TakeWhile((line) => line.StartsWith("END CUSTOMERS") == false);
 			return (from line in customers
-				let fields = line.Split(',')
-				let custID = fields[0].Trim()
-				select new Customer()
-				{
-					CustomerID = custID,
-					CustomerName = fields[1].Trim(),
-					Address = fields[2].Trim(),
-					City = fields[3].Trim(),
-					PostalCode = fields[4].Trim()
-				});
-		}
-
-		public static Order[] GetOrdersForCustomer(string id)
-		{
-			// Assumes we copied the file correctly!
-			var orders = System.IO.File.ReadAllLines(@"plinqdata.csv")
-				.SkipWhile((line) => line.StartsWith("ORDERS") == false)
-				.Skip(1)
-				.TakeWhile((line) => line.StartsWith("END ORDERS") == false);
-			var orderStrings = from line in orders
-				let fields = line.Split(',')
-					where fields[1].CompareTo(id) == 0
-				select new Order()
-			{
-				OrderID = Convert.ToInt32(fields[0]),
-				CustomerID = fields[1].Trim(),
-				OrderDate = DateTime.Parse(fields[2]),
-				ShippedDate = DateTime.Parse(fields[3])
-			};
-			return orderStrings.ToArray();
-		}
-
-		//  "10248, VINET, 7/4/1996 12:00:00 AM, 7/16/1996 12:00:00 AM
-		public static IEnumerable<Order> GetOrders()
-		{
-			// Assumes we copied the file correctly!
-			var orders = System.IO.File.ReadAllLines(@"plinqdata.csv")
-				.SkipWhile((line) => line.StartsWith("ORDERS") == false)
-				.Skip(1)
-				.TakeWhile((line) => line.StartsWith("END ORDERS") == false);
-			return from line in orders
-				let fields = line.Split(',')
-
-					select new Order()
-			{
-				OrderID = Convert.ToInt32(fields[0]),
-				CustomerID = fields[1].Trim(),
-				OrderDate = DateTime.Parse(fields[2]),
-				ShippedDate = DateTime.Parse(fields[3])
-			};
+					let fields = line.Split(',')
+					let custID = fields[0].Trim()
+					select new Customer()
+					{
+						CustomerID = custID,
+						CustomerName = fields[1].Trim(),
+						Address = fields[2].Trim(),
+						City = fields[3].Trim(),
+						PostalCode = fields[4].Trim()
+					});
 		}
 
 		public static IEnumerable<Product> GetProducts()
@@ -191,6 +86,25 @@ namespace PLinqDemo
 			};
 		}
 
+		//  "10248, VINET, 7/4/1996 12:00:00 AM, 7/16/1996 12:00:00 AM
+		public static IEnumerable<Order> GetOrders()
+		{
+			// Assumes we copied the file correctly!
+			var orders = System.IO.File.ReadAllLines(@"plinqdata.csv")
+				.SkipWhile((line) => line.StartsWith("ORDERS") == false)
+				.Skip(1)
+				.TakeWhile((line) => line.StartsWith("END ORDERS") == false);
+			return from line in orders
+				let fields = line.Split(',')
+				select new Order()
+				{
+					OrderID = Convert.ToInt32(fields[0]),
+					CustomerID = fields[1].Trim(),
+					OrderDate = DateTime.Parse(fields[2]),
+					ShippedDate = DateTime.Parse(fields[3])
+				};
+		}
+
 		public static IEnumerable<OrderDetail> GetOrderDetails()
 		{
 			// Assumes we copied the file correctly!
@@ -209,6 +123,87 @@ namespace PLinqDemo
 				Quantity = Convert.ToDouble(fields[3]),
 				Discount = Convert.ToDouble(fields[4])
 			};
+		}
+
+		#region DataClasses
+			public class Order
+			{
+				private Lazy<OrderDetail[]> _orderDetails;
+				public Order()
+				{
+					_orderDetails = new Lazy<OrderDetail[]>(() => GetOrderDetailsForOrder(OrderID));
+				}
+				public int OrderID { get; set; }
+				public string CustomerID { get; set; }
+				public DateTime OrderDate { get; set; }
+				public DateTime ShippedDate { get; set; }
+				public OrderDetail[] OrderDetails { get { return _orderDetails.Value; } }
+			}
+
+			public class Customer
+			{
+				private Lazy<Order[]> _orders;
+				public Customer()
+				{
+					_orders = new Lazy<Order[]>(() => GetOrdersForCustomer(CustomerID));
+				}
+				public string CustomerID { get; set; }
+				public string CustomerName { get; set; }
+				public string Address { get; set; }
+				public string City { get; set; }
+				public string PostalCode { get; set; }
+				public Order[] Orders
+				{
+					get
+					{
+						return _orders.Value;
+					}
+				}
+			}
+
+			public class Product
+			{
+				public string ProductName { get; set; }
+				public int ProductID { get; set; }
+				public double UnitPrice { get; set; }
+			}
+
+			public class OrderDetail
+			{
+				public int OrderID { get; set; }
+				public int ProductID { get; set; }
+				public double UnitPrice { get; set; }
+				public double Quantity { get; set; }
+				public double Discount { get; set; }
+			}
+		#endregion
+
+		public static IEnumerable<string> GetCustomersAsStrings()
+		{
+			return System.IO.File.ReadAllLines(@"plinqdata.csv")
+				.SkipWhile((line) => line.StartsWith("CUSTOMERS") == false)
+				.Skip(1)
+				.TakeWhile((line) => line.StartsWith("END CUSTOMERS") == false);
+		}
+
+		public static Order[] GetOrdersForCustomer(string id)
+		{
+			// Assumes we copied the file correctly!
+			var orders = System.IO.File.ReadAllLines(@"plinqdata.csv")
+				.SkipWhile((line) => line.StartsWith("ORDERS") == false)
+				.Skip(1)
+				.TakeWhile((line) => line.StartsWith("END ORDERS") == false);
+			var orderStrings = from line in orders
+				let fields = line.Split(',')
+					where fields[1].CompareTo(id) == 0
+				select new Order()
+			{
+				OrderID = Convert.ToInt32(fields[0]),
+				CustomerID = fields[1].Trim(),
+				OrderDate = DateTime.Parse(fields[2]),
+				ShippedDate = DateTime.Parse(fields[3])
+			};
+			return orderStrings.ToArray();
 		}
 
 		public static OrderDetail[] GetOrderDetailsForOrder(int id)
